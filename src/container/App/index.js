@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
+import {Route} from 'react-router-dom';
+import {connect} from 'react-redux';
+import Header from '../../components/Header';
+import NavBar from '../../components/NavBar';
+import Dashboard from '../../components/Dashboard';
 import {findTheTime, options} from '../../utils/functions/helper';
 import {URL} from '../../utils/api/api_paths';
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super()
     this.state={
       month: 'July',
       day: '7',
-      year: '1995',
-      option: {
-
-        "day": ["1", "2"],
-        "year": ["2018", "2019"]
-      }
+      year: '1995'
     }
   }
 
@@ -33,10 +33,16 @@ class App extends Component {
     return options[name].map(el => (<option value={el}>{el}</option>))
   }
 
-  render() {
+  render(){
     console.log('state:', this.state)
     return (
       <div className="App">
+        <Header />
+        <NavBar />
+        <Route exact to='/' component={Dashboard} />
+        <Route exact to='/404' component={Error404} />
+        <Route exact to='/jobs' component={Jobboard} />
+        <Route exact to='/fav' component={Favorites} />
         <h2>UNIX = {findTheTime(this.state)}</h2>
         <select name="month" onChange={(e) => this.setStateDate(e.target)}>
           {this.dateSelection('months')}
@@ -52,4 +58,8 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapDispatchToProps = (dispatch) => ({
+  
+})
+
+export default connect(null, mapDispatchToProps)(App);
