@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { mapDispatchToProps } from '../App';
+import {counterAppl} from '../../store/actions/';
 
 export class TrackerAppl extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
+    this.state = {
+      counter: this.props.counterAppl
+    }
 
   }
 
-  handleIncr = () => {
+  handleClick = (e) => {
+    let {value} = e.target;
+    let {counter} = this.state;
+    value === '+' ? counter ++ : counter --;
 
-  }
-
-  handleDecr = () => {
-
+    counterAppl(counter);
+    this.setState({counter});
   }
 
   render() {
@@ -21,21 +25,21 @@ export class TrackerAppl extends Component {
       <section className="Tracker Applied">
         <h3>Jobs Applied</h3>
         <article>
-          <h2>00</h2>
-          <button>-</button>
-          <button>+</button>
+          <h2>{this.state.counter}</h2>
+          <button onClick={this.handleClick}>-</button>
+          <button onClick={this.handleClick}>+</button>
         </article>
       </section>
     )
   }
 }
 
-export const mapStateToProps = () => ({
+export const mapStateToProps = (state) => ({
+  counterAppl: state.counterAppl
+});
 
-})
+export const mapDispatchToProps = (dispatch) => ({
+  counterAppl: num => dispatch(counterAppl(num))
+});
 
-export const mapDispatchToProps = () => ({
-
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(TrackerAppl)
+export default connect(mapStateToProps, mapDispatchToProps)(TrackerAppl);
