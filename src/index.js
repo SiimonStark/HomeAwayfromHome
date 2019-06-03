@@ -9,9 +9,10 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import {Provider} from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
 import thunk from 'redux-thunk';
-import rootReducer from './path/';
+import rootReducer from './store/reducers';
 
-const store = createStore(rootReducer, composeWithDevTools(thunk))
+const store = createStore(rootReducer, 
+  composeWithDevTools(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <Provider store= {store}>

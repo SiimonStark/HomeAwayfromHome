@@ -3,7 +3,7 @@ import {Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Header from '../../components/Header';
 import NavBar from '../../components/NavBar';
-import Dashboard from '../../components/Dashboard';
+import Dashboard from '../../components/Dashboard/';
 import {findTheTime, options} from '../../utils/functions/helper';
 import {URL} from '../../utils/api/api_paths';
 
