@@ -22,3 +22,13 @@ export const toggleFavorite = (id) => ({
   type: "TOGGLE_FAVORITE",
   id
 });
+
+export const counterAppl = (num) => ({
+  type: "COUNTER_APPL",
+  num
+});
+
+export const counterInter = (num) => ({
+  type: "COUNTER_INTER",
+  num
+});

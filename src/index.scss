@@ -1,13 +1,11 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import './sass/variables.scss';
+@import './sass/mixins.scss';
+@import './sass/grid.scss';
+@import './container/App/App';
+@import './components/Header/Header';
+@import './components/NavBar/NavBar.scss';
+@import './components/Dashboard/Dashboard';
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  background: $dull-bg;
 }

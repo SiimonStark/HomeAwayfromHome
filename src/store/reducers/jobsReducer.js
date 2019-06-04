@@ -1,11 +1,10 @@
-const jobsReducer = (state= {recent: [], fave: []}, action) => {
-  switch(action.type) {
+const jobsReducer = (state= {recent: [], fave: []}, actions) => {
+  switch(actions.type) {
     case 'FETCH_RECENT_JOBS':
-      let newState = state.recent = action.recentJobs;
-      return newState;
+      return [...state, actions.recent];
     case 'TOGGLE_FAVE':
       let newState = state.fave.map(job => {
-        if (job.id === action.id) {
+        if (job.id === actions.id) {
           job.fave = !job.fave;
         }
         return job;

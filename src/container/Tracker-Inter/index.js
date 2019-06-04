@@ -1,19 +1,22 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { mapDispatchToProps } from '../App';
+import {counterInter} from '../../store/actions/';
 
 export class TrackerInter extends Component {
-  constructor() {
-    super()
-
+  constructor(props) {
+    super(props)
+    this.state = {
+      counter: this.props.counterInter || 0
+    }
   }
 
-  handleIncr = () => {
-    
-  }
+  handleClick = (e) => {
+    let {value} = e.target;
+    let {counter} = this.state;
+    value === '+' ? counter ++ : counter --;
 
-  handleDecr = () => {
-
+    counterInter(counter);
+    this.setState({counter});
   }
 
   render() {
@@ -21,21 +24,21 @@ export class TrackerInter extends Component {
       <section className="Tracker Interview">
         <h3>Interviews</h3>
         <article>
-          <h2>00</h2>
-          <button>-</button>
-          <button>+</button>
+          <h2>{this.state.counter}</h2>
+          <button onClick={this.handleClick}>-</button>
+          <button onClick={this.handleClick}>+</button>
         </article>
       </section>
     )
   }
 }
 
-export const mapStateToProps = () => ({
+export const mapStateToProps = (state) => ({
+  counterInter: state.counterInter
+});
 
-})
+export const mapDispatchToProps = (dispatch) => ({
+  counterInter: num => dispatch(counterInter(num))
+});
 
-export const mapDispatchToProps = () => ({
-
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(TrackerInter)
+export default connect(mapStateToProps, mapDispatchToProps)(TrackerInter);
