@@ -1,0 +1,43 @@
+header form {
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+
+    .keyword {
+      background: $gradient;
+      border: none;
+      border-radius: 20px 0 0 20px;
+      height: 45px;
+      padding: 0 15px;
+    }
+
+    button {
+      background: $dull-bg;
+      border-radius: 0 20px 20px 0;
+      color: $accent-color;
+      font-size: 24px;
+      width: 50px;
+    }
+
+    .extra-filter {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 0;
+      width: 70vw;
+
+      select {
+        background: $gradient;
+      }
+    }
+    
+}
+
+.filter-input {
+          background: $gradient;
+          border: none;
+          border-radius: 20px;
+          padding: 0 15px;
+          height: 45px;
+      } 
+
+  

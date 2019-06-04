@@ -24,16 +24,16 @@ class Search extends Component {
   renderFilters = () => {
     console.log('Render them filts')
     return (
-      <fieldset>
+      <div className="extra-filter">
         <select name='date' onChange={this.handleOption}>
           {this.state.filters.date.map(val =>
             <option key={val.length} >{val}</option>)}
         </select>
-        <input name='location' type='text' 
+        <input name='location' type='text' className="filter-input"
           onChange={this.handleLocation} placeholder='Location' />
-        <input name='category' type='text' 
+        <input name='category' type='text' className="filter-input"
           onChange={this.handleCategory} placeholder='Category' />
-      </fieldset>
+      </div>
     )
   }
 
@@ -49,7 +49,7 @@ class Search extends Component {
 
     return (
       <form onSubmit={this.handleSubmit} onClick={this.handleRedirect}>
-        <input type="search" placeholder="Search by keyword" />
+        <input className="keyword" type="search" placeholder="Search by keyword" />
         <button>
           <i className="fab fa-searchengin"></i>
         </button>
