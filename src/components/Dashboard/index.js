@@ -6,7 +6,7 @@ import Recent from '../../container/Recent/'
 
 const Dashboard = () => {
   return (
-    <main>
+    <main className="Dashboard">
       <TrackerAppl />
       <TrackerInter />
       <Recent />

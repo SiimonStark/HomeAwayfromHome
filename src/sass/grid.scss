@@ -3,6 +3,7 @@
   width: 100vw;
   display: grid;
   grid-template-rows: 15% 85%;
+  grid-template-columns: 8% 92%;
   grid-template-areas: "Header Header" "NavBar display"
 }
 

@@ -1,3 +1,4 @@
+// ** Status
 export const isLoading = (isLoading) => ({
   type: "IS_LOADING",
   isLoading
@@ -13,16 +14,13 @@ export const isResults = (isResults) => ({
   isResults
 });
 
+// ** Fetch
 export const fetchRecent = (recentJobs) => ({
   type: "FETCH_RECENT_JOBS",
   recentJobs
 });
 
-export const toggleFavorite = (id) => ({
-  type: "TOGGLE_FAVORITE",
-  id
-});
-
+// ** Tracker
 export const counterAppl = (num) => ({
   type: "COUNTER_APPL",
   num
@@ -31,4 +29,21 @@ export const counterAppl = (num) => ({
 export const counterInter = (num) => ({
   type: "COUNTER_INTER",
   num
+});
+
+// ** Search
+export const extendFilter = (bool) => ({
+  type: "EXTEND_FILTER",
+  bool
+});
+
+export const searchInput = (input) => ({
+  type: "UPDATE_KEYWORD",
+  input
+});
+
+// ** Jobs
+export const toggleFavorite = (id) => ({
+  type: "TOGGLE_FAVORITE",
+  id
 });

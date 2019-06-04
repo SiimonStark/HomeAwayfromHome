@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
 import 'normalize.css';
+import './index.scss';
 import App from './container/App/';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
