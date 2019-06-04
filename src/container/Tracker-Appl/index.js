@@ -26,8 +26,12 @@ export class TrackerAppl extends Component {
         <h3>Jobs Applied</h3>
         <article>
           <h2>{this.state.counter}</h2>
-          <button onClick={this.handleClick}>-</button>
-          <button onClick={this.handleClick}>+</button>
+          <button onClick={this.handleClick}>
+            <i class="fas fa-minus-circle"></i>
+          </button>
+          <button onClick={this.handleClick}>
+            <i className="fas fa-plus-circle"></i>
+          </button>
         </article>
       </section>
     )

@@ -1,0 +1,39 @@
+.Dashboard {
+  display: grid;
+  grid-template-areas: "Applied Interview" "Recent Recent";
+  grid-template-columns: 30% 30%;
+  height: 100%;
+  width: 90vw;
+  padding: 5% 15%;
+}
+
+.Tracker {
+  background: linear-gradient(180deg, #F2F2F2 0%, #A3C2C0 100%);
+  box-shadow: 5px 4px 7px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 245px;
+  width: 80%;
+
+    h3 {
+      font-family: $font-One;
+      font-size: 30px;
+      color: #00A0C4;
+      text-shadow: 1.5px 1.5px 1px #FFFFFF;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: $primary-bg;
+      font-size: 24px;
+
+        &:hover {
+          cursor: pointer;
+          color: $dull-bg;
+          text-shadow: 1.5px .5px 1px navy;
+        }
+    }
+}

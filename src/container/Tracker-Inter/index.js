@@ -25,8 +25,14 @@ export class TrackerInter extends Component {
         <h3>Interviews</h3>
         <article>
           <h2>{this.state.counter}</h2>
-          <button onClick={this.handleClick}>-</button>
-          <button onClick={this.handleClick}>+</button>
+          <div className="btn__container">
+            <button onClick={this.handleClick}>
+              <i class="fas fa-minus-circle"></i>
+            </button>
+            <button onClick={this.handleClick}>
+              <i className="fas fa-plus-circle"></i>
+            </button>
+          </div>
         </article>
       </section>
     )

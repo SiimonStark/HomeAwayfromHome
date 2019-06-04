@@ -1,19 +1,26 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
+import {extendFilter} from '../../store/actions/';
 
 class Search extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      keyword: '',
+      extend: this.props.isActive || false,
       redirect: false,
       filters: {
-        date: ['24hrs', 'Three days', 'One Week'],
+        keyword: '',
+        date: ['All', '24hrs', 'Three days', 'One Week'],
         location: '',
         category: ''
       }
     }
+  }
+
+  handleExtend = () => {
+    this.props.extendFilter(true);
+    this.setState({extend: true})
   }
 
   handleSubmit = (e) => {
@@ -25,7 +32,7 @@ class Search extends Component {
     console.log('Render them filts')
     return (
       <div className="extra-filter">
-        <select name='date' onChange={this.handleOption}>
+        <select name='date' onChange={this.handleOption} >
           {this.state.filters.date.map(val =>
             <option key={val.length} >{val}</option>)}
         </select>
@@ -39,33 +46,32 @@ class Search extends Component {
 
   render() {
     if(this.state.redirect) {
-      this.setState({redirect: false});
+      this.props.extendFilter(false);
+      this.setState({redirect: false, extend: false});
       return (<Redirect to='/jobs' />)
     }
 
-
-
-    console.log('Route?', this.props.history)
-
     return (
       <form onSubmit={this.handleSubmit} onClick={this.handleRedirect}>
-        <input className="keyword" type="search" placeholder="Search by keyword" />
+        <input className="keyword" type="search" 
+          onClick={this.handleExtend} 
+          placeholder="Search by keyword" />
         <button>
           <i className="fab fa-searchengin"></i>
         </button>
-        {this.props.isActive && this.renderFilters()}
+        {this.state.extend && this.renderFilters()}
       </form>
     )
   }
 }
 
 export const mapStateToProps = (state) => ({
-  isActive: true,
-  filter: state.filter
+  isActive: state.search.isSearch,
+  filter: state.search.filter
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-
+  extendFilter: (bool)=> dispatch(extendFilter(bool))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
