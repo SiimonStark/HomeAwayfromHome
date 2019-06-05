@@ -9,8 +9,8 @@ export const recentThunk = (URL) => {
         throw Error(response.statusText)
       }
       const data = await response.json()
+      dispatch(fetchRecent(data.listings))
       dispatch(isLoading(false))
-      dispatch(fetchRecent(data))
     } catch (error) {
       dispatch(isError(error.message))
     }

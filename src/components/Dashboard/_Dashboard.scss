@@ -1,11 +1,13 @@
 .Dashboard {
+  box-sizing: border-box;
   display: grid;
   grid-template-areas: "Applied Interview" "Recent Recent";
   grid-template-columns: 45% 45%;
-  grid-template-rows: 30% 60%;
-  grid-gap: 50px 0;
+  grid-template-rows: 30% 70%;
+  grid-gap: 30px 30px;
+  justify-content: center;
   height: 100%;
-  width: 90vw;
+  width: 100%;
   padding: 5% 10%;
 }
 
@@ -14,14 +16,17 @@
 }
 
 .Tracker {
+  box-sizing: border-box;
   background: linear-gradient(180deg, #F2F2F2 0%, #A3C2C0 100%);
   box-shadow: 5px 4px 7px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  position: relative;
   padding: 20px;
-  height: 245px;
+  margin: auto;
+  height: 90%;
   width: 80%;
 
     h3 {
@@ -38,6 +43,17 @@
       text-shadow: 1.5px 1.5px 1px #FFFFFF;
       margin: 0;
     }
+    
+    #plus, 
+    #minus {
+      box-sizing: border-box;
+      background: none;
+      border: none;
+      color: $primary-bg;
+      font-size: 24px;
+      height: 30px;
+      margin: 0 15px;
+    }
 
     #plus:hover {
       cursor: pointer;
@@ -50,13 +66,9 @@
       color: $dull-bg;
       text-shadow: 1.5px .5px 1px navy;
     }
+}
 
-    #plus, 
-    #minus {
-      background: none;
-      border: none;
-      color: $primary-bg;
-      font-size: 24px;
-      margin: 0 15px;
-    }
+.Tracker__btn {
+  box-sizing: border-box;
+  height: 35px;
 }
