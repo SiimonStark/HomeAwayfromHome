@@ -14,15 +14,11 @@ import thunk from 'redux-thunk';
 const store = createStore(rootReducer, 
   composeWithDevTools(applyMiddleware(thunk)));
 
-let router = (
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-)
-
 ReactDOM.render(
   <Provider store= {store}>
-    {router}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>, 
   document.getElementById('root'));
 

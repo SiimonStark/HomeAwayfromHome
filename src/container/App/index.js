@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import Header from '../../components/Header/';
@@ -44,10 +44,12 @@ export class App extends Component {
         <Header />
         <NavBar />
         <div className="display">
-          <Route exact to='/' component={Dashboard} />
-          <Route exact to='/error404' component={Error404} />
-          <Route exact to='/jobs' component={Jobboard} />
-          <Route exact to='/fav' component={Favorites} />
+        <Switch>
+          <Route exact path='/' component={Dashboard} />
+          <Route path='/error404' component={Error404} />
+          <Route path='/jobs' component={Jobboard} />
+          <Route path='/fav' component={Favorites} />
+        </Switch>
         </div>
       </div>
     )
