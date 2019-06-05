@@ -3,44 +3,40 @@ import {connect} from 'react-redux';
 import {counterInter} from '../../store/actions/';
 
 export class TrackerInter extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      counter: this.props.counterInter || 0
-    }
-  }
 
   handleClick = (e) => {
-    let {value} = e.target;
-    let {counter} = this.state;
-    value === '+' ? counter ++ : counter --;
+    let { id } = e.target;
+    let { counter } = this.props
 
-    counterInter(counter);
-    this.setState({counter});
+    if (counter > 0) {
+      id === 'plus' ? counter++ : counter--;
+    } else {
+      id === 'plus' ? counter++ : counter = 0;
+    }
+
+    this.props.counterInter(counter);
   }
 
   render() {
     return(
       <section className="Tracker Interview">
         <h3>Interviews</h3>
-        <article>
-          <h2>{this.state.counter}</h2>
-          <div className="btn__container">
-            <button onClick={this.handleClick}>
-              <i class="fas fa-minus-circle"></i>
-            </button>
-            <button onClick={this.handleClick}>
-              <i className="fas fa-plus-circle"></i>
-            </button>
-          </div>
-        </article>
+        <h2>{this.props.counter}</h2>
+        <div className="Tracker__btn">
+          <i id="minus"
+            onClick={this.handleClick}
+            className="fas fa-minus-circle"></i>
+          <i id="plus"
+            onClick={this.handleClick}
+            className="fas fa-plus-circle"></i>
+        </div>
       </section>
     )
   }
 }
 
 export const mapStateToProps = (state) => ({
-  counterInter: state.counterInter
+  counter: state.counterInter
 });
 
 export const mapDispatchToProps = (dispatch) => ({
