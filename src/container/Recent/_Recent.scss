@@ -6,15 +6,65 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: scroll;
-  height: 80%;
-  width: 90%;
-  margin-top: 35px;
+  // overflow-y: scroll;
+  // flex-flow: wrap;
+  height: 90%;
+  width: 100%;
+  margin: auto;
 
     h2 {
       font-family: $font-One;
       font-size: 30px;
       color: #00A0C4;
       text-shadow: 1.5px 1.5px 1px #FFFFFF;
+    }
+}
+
+.card-container {
+  overflow-y: scroll;
+  height: 100%;
+  width: 95%;
+}
+
+.border {
+  content: '';
+  background: $gradient;
+  border-radius: 20px;
+  height: 130px;
+  width: 3px;
+}
+
+.recent-job {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 25% 5px 70%;
+  grid-gap: 0 15px;
+  border-radius: 150px;
+  background: $primary-bg;
+  color: $dull-bg;
+  height: 160px;
+  width: 95%;
+  margin: 1.5%;
+  padding: 15px 0 25px 55px;
+  text-align: left;
+
+    .recent-header {
+      width: 160px;
+    }
+    
+    .recent-content {
+      overflow-y: scroll;
+      height: 140px;
+      width: 380px;
+
+      h5,
+      p {
+        margin: none   !important;
+      }
+    }
+
+    h3, 
+    a {
+      font-family: $font-Three;
     }
 }
