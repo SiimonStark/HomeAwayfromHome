@@ -6,7 +6,6 @@ export class Recent extends Component {
   
   renderRecent = () => {
     let {listing} = this.props.recent;
-    console.log('list', listing)
     return listing.map(li => {
       return (
         <article className="recent-job" key={li.id}>
@@ -27,7 +26,6 @@ export class Recent extends Component {
 
   render() {
     let {loading} = this.props
-    console.log('load', loading)
     let map;
     if (!loading) {
       map = this.renderRecent();
@@ -47,7 +45,7 @@ export class Recent extends Component {
 
 export const mapStateToProps = (state) => ({
   loading: state.isLoading,
-  recent: state.jobs.recent
+  recent: state.jobs
 })
 
 export const mapDispatchToProps = (dispatch) => ({

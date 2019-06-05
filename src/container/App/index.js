@@ -30,10 +30,12 @@ export class App extends Component {
   }
 
   setStateDate = ({name, value}) => {
+    // !! Expiremental
     this.setState({[name]: value})
   }
 
   dateSelection = (name) => {
+    // !! Expiremental
     return options[name].map(el => (<option value={el}>{el}</option>))
   }
 
@@ -51,27 +53,13 @@ export class App extends Component {
           <Route exact to='/jobs' component={Jobboard} />
           <Route exact to='/fav' component={Favorites} />
         </div>
-        <h2>UNIX = {findTheTime(this.state)}</h2>
-        <select name="month" onChange={(e) => this.setStateDate(e.target)}>
-          {this.dateSelection('months')}
-        </select>
-        <select name="day" onChange={(e) => this.setStateDate(e.target)}>
-          {this.dateSelection('days')}
-        </select>
-        <select name="year" onChange={(e) => this.setStateDate(e.target)}>
-          {this.dateSelection('years')}
-        </select>
       </div>
     )
   }
 }
 
-export const mapStateToProps = (state) => ({
-  recent: state.jobs.recent
-})
-
 export const mapDispatchToProps = (dispatch) => ({
   recentThunk: (URL) => dispatch(recentThunk(URL))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
