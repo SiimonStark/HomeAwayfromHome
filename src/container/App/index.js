@@ -33,16 +33,12 @@ export class App extends Component {
     // !! Expiremental
     this.setState({[name]: value})
   }
-
   dateSelection = (name) => {
     // !! Expiremental
     return options[name].map(el => (<option value={el}>{el}</option>))
   }
 
   render(){
-    console.log('App state:', this.state)
-    console.log('App P:', this.props.recent)
-
     return (
       <div className="App">
         <Header />
