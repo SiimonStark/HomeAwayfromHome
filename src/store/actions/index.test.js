@@ -78,14 +78,23 @@ describe('actions', () => {
       expect(result).toEqual(expectedAction);
     })
   })
-  describe('Jobs...!!Not finished with favorites', () => {
-    it('should have a type of TOGGLE_FAVORITE', () => {
+  describe('Favorites...!!Not finished with favorites component', () => {
+    it('should have a type of ADD_FAVORITE', () => {
       const id = 7;
       const expectedAction = {
-        type: "TOGGLE_FAVORITE",
+        type: "ADD_FAVORITE",
         id
       }
-      const result = actions.toggleFavorite(id);
+      const result = actions.addFavorite(id);
+      expect(result).toEqual(expectedAction);
+    })
+    it('should have a type of REMOVE_FAVORITE', () => {
+      const id = 7;
+      const expectedAction = {
+        type: "REMOVE_FAVORITE",
+        id
+      }
+      const result = actions.removeFavorite(id);
       expect(result).toEqual(expectedAction);
     })
   })

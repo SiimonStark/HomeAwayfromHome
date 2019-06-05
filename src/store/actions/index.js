@@ -42,8 +42,13 @@ export const searchInput = (input) => ({
   input
 });
 
-// ** Jobs
-export const toggleFavorite = (id) => ({
-  type: "TOGGLE_FAVORITE",
+// ** Favorites
+export const addFavorite = (id) => ({
+  type: "ADD_FAVORITE",
+  id
+});
+
+export const removeFavorite = (id) => ({
+  type: "REMOVE_FAVORITE",
   id
 });
