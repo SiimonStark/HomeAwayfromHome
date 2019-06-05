@@ -1,26 +1,23 @@
-import App, { mapStateToProps, mapDispatchToProps } from '.';
+import Recent, { mapStateToProps } from '.';
 import { connect } from 'react-redux';
 
-describe('AddTodoFormContainer', () => {
-  describe('AddTodoForm component', () => {
-    // Write these tests on your own
-    // You already know how!
+describe('Recent', () => {
+  describe('Recent component', () => {
+    
   })
 
   describe('mapStateToProps', () => {
-    it('should return an object with the todos array', () => {
+    it('should test state to props', () => {
       // Setup
       const mockState = {
-        todos: [{ text: 'Learn Redux!', id: 0 }],
-        filter: 'SHOW_ALL'
+        jobs: {listing: [{ name: 'Company', id: 0 }]},
+        loading: false
       }
       const expected = {
-        todos: [{ text: 'Learn Redux!', id: 0 }]
+        recent: { listing: [{ name: 'Company', id: 0 }] }
       }
-
       // Execution
       const mappedProps = mapStateToProps(mockState)
-
       // Expectation
       expect(mappedProps).toEqual(expected)
     })
