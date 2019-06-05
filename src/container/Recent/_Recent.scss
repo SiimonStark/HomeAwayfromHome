@@ -67,4 +67,10 @@
     a {
       font-family: $font-Three;
     }
+
+    a {
+      &:hover {
+        color: $accent-color;
+      }
+    }
 }
