@@ -48,8 +48,4 @@ export const mapStateToProps = (state) => ({
   recent: state.jobs
 })
 
-export const mapDispatchToProps = (dispatch) => ({
-
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Recent);
+export default connect(mapStateToProps, null)(Recent);

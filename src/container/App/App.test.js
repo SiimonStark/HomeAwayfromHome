@@ -1,7 +1,26 @@
 import React from '../../../node_modules/react';
 import ReactDOM from '../../../node_modules/react-dom';
+import { App, mapDispatchToProps } from './';
+import recentThunk from '../../middleware/recentThunk';
 
-describe('App', () => {
-    // Write these tests on your own
-    // You already know how!
+describe('App Container', () => {
+  describe('App', () => {
+      // Write these tests on your own
+      // You already know how!
+  })
+  describe('mapDispatchToProps', () => {
+    // ?? Not sure how to Test Thunks in mDTP
+    it.skip('calls dispatch with thunk', () => {
+      let url = 'www.mock.com';
+      // Setup
+      const mockDispatch = jest.fn()
+      const actionToDispatch = recentThunk(url)
+  
+      // Execution
+      const mappedProps = mapDispatchToProps(mockDispatch)
+  
+      // Expectaion
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
+  })
 })
