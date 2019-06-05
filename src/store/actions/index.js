@@ -38,7 +38,7 @@ export const extendFilter = (bool) => ({
 });
 
 export const searchInput = (input) => ({
-  type: "UPDATE_KEYWORD",
+  type: "UPDATE_INPUT",
   input
 });
 
