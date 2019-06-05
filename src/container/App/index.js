@@ -11,10 +11,11 @@ import Favorites from '../Favorites/';
 
 import {findTheTime, options} from '../../utils/functions/helper';
 import {URL} from '../../utils/api/api_paths';
+import {recentThunk} from '../../middleware/recentThunk';
 
 export class App extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state={
       month: 'July',
       day: '7',
@@ -22,12 +23,10 @@ export class App extends Component {
     }
   }
 
-  componentDidMount = () => {
-    let targetUrl = `&method=aj.jobs.search&keywords=react`
+  componentDidMount() {
+    let targetUrl = `&method=aj.jobs.search&keywords=react`;
 
-    fetch(URL + targetUrl)
-      .then(response=> response.json())
-      .then(result=> console.log(result))
+    this.props.recentThunk(URL + targetUrl)
   }
 
   setStateDate = ({name, value}) => {
@@ -39,7 +38,9 @@ export class App extends Component {
   }
 
   render(){
-    console.log('state:', this.state)
+    console.log('App state:', this.state)
+    console.log('App P:', this.props.recent)
+
     return (
       <div className="App">
         <Header />
@@ -65,8 +66,12 @@ export class App extends Component {
   }
 }
 
-// export const mapDispatchToProps = (dispatch) => ({
-  
-// })
+export const mapStateToProps = (state) => ({
+  recent: state.jobs.recent
+})
 
-export default connect(null, null)(App);
+export const mapDispatchToProps = (dispatch) => ({
+  recentThunk: (URL) => dispatch(recentThunk(URL))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

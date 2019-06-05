@@ -1,10 +1,16 @@
 .Dashboard {
   display: grid;
   grid-template-areas: "Applied Interview" "Recent Recent";
-  grid-template-columns: 30% 30%;
+  grid-template-columns: 45% 45%;
+  grid-template-rows: 30% 60%;
+  grid-gap: 50px 0;
   height: 100%;
   width: 90vw;
-  padding: 5% 15%;
+  padding: 5% 10%;
+}
+
+.Recent {
+  grid-area: Recent;
 }
 
 .Tracker {

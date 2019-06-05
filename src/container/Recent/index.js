@@ -1,36 +1,36 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import Loading from '../../components/Loading/';
 
 export class Recent extends Component {
-  constructor() {
-    super()
+  
+  mapRecent = () => {
+    
   }
 
   render() {
+    console.log('RecentP', this.props)
+    let isLoading;
+    if (this.props.loading) {
+      isLoading = <Loading />
+    } else {
+      isLoading = <p>test</p>
+    }
     return (
       <section className="Recent">
-        <div className="Recent__container">
-          <article>
-            <p>JOB #1</p>
-          </article>
-          <article>
-            <p>JOB #2</p>
-          </article>
-          <article>
-            <p>JOB #3</p>
-          </article>
-        </div>
+        {isLoading}
       </section>
     )
   }
 }
 
-export const mapStateToProps = () => {
+export const mapStateToProps = (state) => ({
+  loading: state.isLoading,
+  recent: state.jobs.recent
+})
 
-}
+export const mapDispatchToProps = (dispatch) => ({
 
-export const mapDispatchToProps = () => {
-
-}
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recent);
