@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading should match snapshot 1`] = `
+<article
+  className="Loading"
+>
+  <h2>
+    Loading:
+  </h2>
+  <p
+    className="standby"
+  >
+    Please Standby
+  </p>
+  <img
+    alt="Loading gif"
+    src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d9b42947064155.586ee48b83acf.gif"
+  />
+</article>
+`;

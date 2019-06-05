@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match snapshot 1`] = `
+<header>
+  <NavLink
+    exact={true}
+    to="/"
+  >
+    <img
+      alt="HomeAwayfromHome Logo"
+      src="Group 3.svg"
+      title="Back to Dashboard"
+    />
+  </NavLink>
+  <h1>
+    H.A.H
+  </h1>
+  <Connect(Search) />
+</header>
+`;

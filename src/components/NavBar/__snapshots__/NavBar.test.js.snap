@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar should match snapshot 1`] = `
+<nav
+  className="Nav"
+>
+  <NavLink
+    exact={true}
+    title="Dashboard"
+    to="/"
+  >
+    <i
+      className="fas fa-columns"
+    />
+  </NavLink>
+  <NavLink
+    title="Job Search"
+    to="/jobs"
+  >
+    <i
+      className="fas fa-briefcase"
+    />
+  </NavLink>
+  <NavLink
+    title="Bookmarked Jobs"
+    to="/fav"
+  >
+    <i
+      className="fas fa-bookmark"
+    />
+  </NavLink>
+</nav>
+`;
