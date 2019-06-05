@@ -1,7 +1,6 @@
-const isLoadingReducer = (state= false, action) => {
+const isLoadingReducer = (state= true, action) => {
   switch(action.type) {
     case 'IS_LOADING':
-      console.log(action.bool)
       return action.bool;
     default:
       return state;

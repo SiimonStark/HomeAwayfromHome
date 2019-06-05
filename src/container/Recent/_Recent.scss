@@ -6,8 +6,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: scroll;
   height: 80%;
   width: 90%;
+  margin-top: 35px;
 
     h2 {
       font-family: $font-One;

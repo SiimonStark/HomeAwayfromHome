@@ -1,11 +1,12 @@
 .Dashboard {
+  box-sizing: border-box;
   display: grid;
   grid-template-areas: "Applied Interview" "Recent Recent";
   grid-template-columns: 45% 45%;
   grid-template-rows: 30% 60%;
   grid-gap: 50px 0;
   height: 100%;
-  width: 90vw;
+  width: 100%;
   padding: 5% 10%;
 }
 
