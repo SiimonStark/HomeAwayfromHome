@@ -71,7 +71,7 @@ describe('actions', () => {
     it('should have a type of UPDATE_KEYWORD', () => {
       const input = {keyword: '', date: '24hrs'};
       const expectedAction = {
-        type: "UPDATE_KEYWORD",
+        type: "UPDATE_INPUT",
         input
       }
       const result = actions.searchInput(input);
