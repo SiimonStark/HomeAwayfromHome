@@ -38,12 +38,17 @@ export const extendFilter = (bool) => ({
 });
 
 export const searchInput = (input) => ({
-  type: "UPDATE_KEYWORD",
+  type: "UPDATE_INPUT",
   input
 });
 
-// ** Jobs
-export const toggleFavorite = (id) => ({
-  type: "TOGGLE_FAVORITE",
+// ** Favorites
+export const addFavorite = (id) => ({
+  type: "ADD_FAVORITE",
+  id
+});
+
+export const removeFavorite = (id) => ({
+  type: "REMOVE_FAVORITE",
   id
 });
