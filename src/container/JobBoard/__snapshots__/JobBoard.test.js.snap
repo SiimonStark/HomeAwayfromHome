@@ -1,3 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Jobboard should match snapshot 1`] = `undefined`;
+exports[`Jobboard should match snapshot 1`] = `
+<section
+  className="Job__display"
+>
+  <div
+    className="Jobboard__container"
+  >
+    <p>
+      Test Jobboard
+    </p>
+  </div>
+</section>
+`;

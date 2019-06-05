@@ -1,30 +1,15 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+import {Favorites} from './index';
+import {shallow} from 'enzyme';
 
-export class Favorites extends Component {
-  constructor() {
-    super()
-    this.state = {
-
-    }
-  }
-
-  render() {
-    return (
-      <section 
-        className="Favorites Jobboard__container">
-        Test Favorites
-      </section>
-    )
-  }
-}
-
-export const mapStateToProps = (state) => ({
-
+describe('Favorites Container', () => {
+  describe('Component', () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<Favorites />)
+    })
+    it('should match snapshot', () => {
+      expect(wrapper).toMatchSnapshot();
+    })
+  })
 })
-
-export const mapDispatchToProps = (dispatch) => ({
-
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
