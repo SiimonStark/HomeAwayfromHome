@@ -46,9 +46,9 @@ export class App extends Component {
         <div className="display">
         <Switch>
           <Route exact path='/' component={Dashboard} />
-          <Route path='/error404' component={Error404} />
           <Route path='/jobs' component={Jobboard} />
           <Route path='/fav' component={Favorites} />
+          <Route component={Error404} />
         </Switch>
         </div>
       </div>
