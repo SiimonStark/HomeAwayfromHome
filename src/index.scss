@@ -6,6 +6,8 @@
 @import './container/Search/Search';
 @import './components/NavBar/NavBar.scss';
 @import './components/Dashboard/Dashboard';
+@import './container/Recent/Recent';
+@import './components/Loading/Loading';
 
 body {
   background: $dull-bg;

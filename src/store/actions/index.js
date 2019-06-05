@@ -1,12 +1,12 @@
 // ** Status
-export const isLoading = (isLoading) => ({
+export const isLoading = (bool) => ({
   type: "IS_LOADING",
-  isLoading
+  bool
 });
 
-export const isError = (isError) => ({
+export const isError = (message) => ({
   type: "IS_ERROR",
-  isError
+  message
 });
 
 export const isResults = (isResults) => ({

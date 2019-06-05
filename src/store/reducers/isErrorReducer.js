@@ -1,7 +1,7 @@
-const isErrorReducer = (state= false, action) => {
+const isErrorReducer = (state= '', action) => {
   switch(action.type) {
     case 'IS_ERROR':
-      return action.isError;
+      return action.message;
     default:
       return state;
   }

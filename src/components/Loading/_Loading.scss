@@ -1,0 +1,18 @@
+.Loading {
+  height: 90%;
+  width: 80%;
+  position: relative;
+  z-index: 5;
+
+    img {
+      border: ridge white 3px;
+      border-radius: 435px;
+      height: 55%;
+      width: 60%;
+    }
+}
+
+.standby {
+  margin: none;
+  font-family: $font-Three;
+}
