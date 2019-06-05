@@ -1,13 +1,13 @@
 import React from 'react';
+import {Jobboard} from './index';
 import {shallow} from 'enzyme';
-import JobBoard from '.';
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
 
 describe('Jobboard', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<JobBoard />);
+    wrapper = shallow(<Jobboard />);
   })
 
   it('should match snapshot', () => {

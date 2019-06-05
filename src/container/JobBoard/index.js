@@ -13,7 +13,7 @@ export class Jobboard extends Component {
     return (
       <section className="Job__display">
         <div className="Jobboard__container">
-          Test Jobboard
+          <p>Test Jobboard</p>
         </div>
       </section>
     )

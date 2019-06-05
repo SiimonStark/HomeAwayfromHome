@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recent Recent component should match snapshot if loading is NOT finished 1`] = `
+<section
+  className="Recent"
+>
+  <Loading />
+</section>
+`;
+
+exports[`Recent Recent component should match snapshot if loading is finished 1`] = `
+<section
+  className="Recent"
+>
+  <div
+    className="card-container"
+  >
+    <article
+      className="recent-job"
+      key="0"
+    >
+      <div
+        className="recent-header"
+      >
+        <h3>
+          Role: 
+          job
+        </h3>
+        <a>
+          Apply Here
+        </a>
+      </div>
+      <div
+        className="border"
+      />
+      <div
+        className="recent-content"
+      >
+        <h5>
+          Post Date:(
+          never
+          )
+        </h5>
+        <h5>
+          Company: 
+          Place
+        </h5>
+        <p>
+          Work here
+        </p>
+      </div>
+    </article>
+    <article
+      className="recent-job"
+      key="1"
+    >
+      <div
+        className="recent-header"
+      >
+        <h3>
+          Role: 
+          JOB
+        </h3>
+        <a>
+          Apply Here
+        </a>
+      </div>
+      <div
+        className="border"
+      />
+      <div
+        className="recent-content"
+      >
+        <h5>
+          Post Date:(
+          Now
+          )
+        </h5>
+        <h5>
+          Company: 
+          Other
+        </h5>
+        <p>
+          Dont Work here
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+`;
